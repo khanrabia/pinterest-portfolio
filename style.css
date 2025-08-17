@@ -1,0 +1,247 @@
+/* ---------------------- General Styles ---------------------- */
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', sans-serif;
+    background: #f2f2f2;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Sections */
+  .section {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Georgia', serif;
+    color: #222;
+  }
+  
+  p {
+    max-width: 700px;
+    margin: 0.5rem auto;
+  }
+  
+  /* Reveal Animation */
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* ---------------------- Hero ---------------------- */
+  .hero {
+    background: #eee;
+    text-align: center;
+    padding: 6rem 2rem;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* ---------------------- Filters ---------------------- */
+  .filters {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .filter-btn {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    margin: 0 0.5rem 0.5rem 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .filter-btn.active,
+  .filter-btn:hover {
+    background: #333;
+    color: #fff;
+  }
+  
+  /* ---------------------- Projects Grid - Masonry ---------------------- */
+  .projects-grid {
+    column-count: 3;
+    column-gap: 1.5rem;
+    width: 100%;
+  }
+  
+  .project-card {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    break-inside: avoid;
+    background: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  
+  /* Card Hover Effects */
+  .project-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+  
+  /* Overlay for hover */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    border-radius: 0.5rem;
+    transition: opacity 0.3s ease;
+  }
+  .project-card:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* Unified Image Aspect Ratio */
+  .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  
+  /* Show / Hide */
+  .project-card.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .project-card.hide {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  
+  /* ---------------------- Skills ---------------------- */
+  .skills-list {
+    list-style: none;
+    padding: 0;
+  }
+  .skill-item {
+    margin: 0.5rem 0;
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.8s ease;
+  }
+  .skill-item.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* ---------------------- Buttons ---------------------- */
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background: #333;
+    color: #fff;
+    border-radius: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .btn:hover {
+    background: #555;
+    transform: translateY(-3px);
+  }
+  
+  /* ---------------------- Modal ---------------------- */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 6rem;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .modal-content {
+    background: #fff;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+    color: #333;
+    animation: fadeIn 0.4s ease;
+  }
+  .close {
+    float: right;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  .close:hover {
+    color: #555;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ---------------------- Back to Top Button ---------------------- */
+  #backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    display: none;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+  }
+  #backToTop:hover {
+    background: #555;
+  }
+  
+  /* ---------------------- Lazy-load Images ---------------------- */
+  .lazy-img {
+    width: 100%;
+    display: block;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+  }
+  .lazy-img.loaded {
+    opacity: 1;
+  }
+  
+  /* ---------------------- Other Portfolios ---------------------- */
+  #otherPortfolios h2 {
+    margin-bottom: 2rem;
+  }
+  
+  /* ---------------------- Responsive ---------------------- */
+  @media (max-width: 1024px) {
+    .projects-grid { column-count: 2; }
+  }
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .section { padding: 3rem 1.5rem; }
+    .projects-grid { column-count: 1; }
+  }
+  

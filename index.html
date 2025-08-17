@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinterest Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Hero Section -->
+  <header class="hero reveal">
+    <div class="hero-content">
+      <h1>Showcasing Ideas, One Pin at a Time</h1>
+      <p>Explore projects in a Pinterest-inspired style.</p>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="section reveal">
+    <h2>About Me</h2>
+    <p>
+      I create digital experiences with a focus on design, layout, and interactivity—bringing ideas to life in an organized, visually engaging way.
+    </p>
+  </section>
+
+  <!-- Filter Buttons -->
+  <section class="filters reveal">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="web">Web</button>
+    <button class="filter-btn" data-filter="app">App</button>
+    <button class="filter-btn" data-filter="design">Design</button>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section reveal">
+    <h2>Projects</h2>
+    <div class="projects-grid" id="projectsGrid">
+      <div class="project-card reveal" data-category="web" data-project="1">
+        <img data-src="images/starlight.jpg" alt="Starlight Tracker" class="lazy-img">
+        <h3>Starlight Tracker</h3>
+        <p>Explore constellations and myths through an interactive sky map.</p>
+        <div class="overlay">
+          <a href="#" class="btn">View Project</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="app" data-project="2">
+        <img data-src="images/rune.jpg" alt="Rune Compiler" class="lazy-img">
+        <h3>Rune Compiler</h3>
+        <p>Translates code into runes with creative design and logic.</p>
+        <div class="overlay">
+          <a href="#" class="btn">View Project</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="design" data-project="3">
+        <img data-src="images/lantern.jpg" alt="Lantern Guide" class="lazy-img">
+        <h3>Lantern Guide</h3>
+        <p>Mindful daily app with prompts and inspiration.</p>
+        <div class="overlay">
+          <a href="#" class="btn">View Project</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="web" data-project="4">
+        <img data-src="images/portfolio.jpg" alt="Portfolio Redesign" class="lazy-img">
+        <h3>Portfolio Redesign</h3>
+        <p>A clean, responsive portfolio layout for designers and developers.</p>
+        <div class="overlay">
+          <a href="#" class="btn">View Project</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="design" data-project="5">
+        <img data-src="images/ui.jpg" alt="UI Inspiration Board" class="lazy-img">
+        <h3>UI Inspiration Board</h3>
+        <p>A collection of UI/UX patterns and design references for creative projects.</p>
+        <div class="overlay">
+          <a href="#" class="btn">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Portfolios Section -->
+  <section id="otherPortfolios" class="section reveal">
+    <h2>Other Portfolios</h2>
+    <div class="projects-grid" id="otherPortfoliosGrid">
+      <div class="project-card reveal" data-category="web" data-project="6">
+        <img data-src="images/designerx.jpg" alt="Designer X" class="lazy-img">
+        <h3>Designer X</h3>
+        <p>Minimalist UI/UX design projects focusing on clean layouts.</p>
+        <div class="overlay">
+          <a href="#" class="btn">View Portfolio</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="app" data-project="7">
+        <img data-src="images/developery.jpg" alt="Developer Y" class="lazy-img">
+        <h3>Developer Y</h3>
+        <p>Mobile app projects highlighting intuitive user experiences.</p>
+        <div class="overlay">
+          <a href="#" class="btn">View Portfolio</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="design" data-project="8">
+        <img data-src="images/creativez.jpg" alt="Creative Z" class="lazy-img">
+        <h3>Creative Z</h3>
+        <p>Graphic and interaction design projects with modern aesthetics.</p>
+        <div class="overlay">
+          <a href="#" class="btn">View Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section reveal">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li class="skill-item">Front-End Development (HTML, CSS, JavaScript)</li>
+      <li class="skill-item">Frameworks (React, Next.js)</li>
+      <li class="skill-item">Project Management (Scrum, Agile)</li>
+      <li class="skill-item">UX/UI & Visual Design</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section reveal">
+    <h2>Contact</h2>
+    <p>Let’s collaborate and bring ideas to life.</p>
+    <a href="mailto:youremail@example.com" class="btn">Send a Message</a>
+  </section>
+
+  <!-- Back to Top -->
+  <button id="backToTop">↑</button>
+
+  <!-- Project Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

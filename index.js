@@ -15,17 +15,41 @@ const projectDetails = {
   8: { title: "Creative Z", description: "Graphic and interaction design projects with modern aesthetics." }
 };
 
-// Open modal on project click
-// Open modal on project card click
-document.querySelectorAll(".project-card").forEach(card => {
-    card.addEventListener("click", (e) => {
-      e.preventDefault(); // Prevent default scrolling behavior
-      const projectId = card.getAttribute("data-project");
-      const data = projectDetails[projectId];
-      modalBody.innerHTML = `<h2>${data.title}</h2><p>${data.description}</p>`;
+// // Open modal on project click
+// // Open modal on project card click
+// document.querySelectorAll(".project-card").forEach(card => {
+//     card.addEventListener("click", (e) => {
+//       e.preventDefault(); // Prevent default scrolling behavior
+//       const projectId = card.getAttribute("data-project");
+//       const data = projectDetails[projectId];
+//       modalBody.innerHTML = `<h2>${data.title}</h2><p>${data.description}</p>`;
+//       modal.style.display = "block";
+//     });
+//   });
+  
+//   document.querySelectorAll(".view-btn").forEach(button => {
+//     button.addEventListener("click", function(e) {
+//       e.preventDefault();
+//       const jobDesc = this.nextElementSibling; // finds .job-description
+//       jobDesc.classList.toggle("hidden");
+//     });
+//   });
+// Open modal on "View Project" button click
+document.querySelectorAll(".project-card .btn").forEach(button => {
+  button.addEventListener("click", function(e) {
+    e.preventDefault();
+    e.stopPropagation(); // Prevent triggering the card click event
+
+    const overlay = this.parentElement;
+    const jobDesc = overlay.querySelector(".job-description"); // select only job-description
+    if (jobDesc) {
+      modalBody.innerHTML = jobDesc.innerHTML; // copy its HTML
       modal.style.display = "block";
-    });
+    }
   });
+});
+
+  
   
   // Open modal on "View Portfolio" click
   document.querySelectorAll(".view-portfolio").forEach(button => {

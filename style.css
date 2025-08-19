@@ -271,3 +271,10 @@ body {
   text-align: center;
   margin-right: 30px;  
 }
+
+.disclaimer {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
